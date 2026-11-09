@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cake Corner Badulla | Fresh Cakes Online in Sri Lanka</title>
+<meta name="description" content="Order birthday, wedding, anniversary and custom cakes online from Cake Corner Badulla, Sri Lanka. Freshly baked, delivered with love.">
+<style>
+/* Cake Corner Badulla – styles. Palette tokens are editable below. */
+:root{--pink:#F8D7DA;--cream:#FFF8EE;--choc:#684332;--rose:#C58B82;--text:#38251F;--r:22px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+h1,h2,h3,.logo{font-family:Georgia,'Palatino Linotype',serif;font-weight:600;line-height:1.15}
+a{color:inherit;text-decoration:none}
+#loader{position:fixed;inset:0;background:var(--pink);display:grid;place-content:center;text-align:center;z-index:99;transition:opacity .6s;font-family:Georgia,serif}
+#loader span{font-size:4rem;animation:bob 1s infinite alternate}
+#loader.done{opacity:0;pointer-events:none}
+@keyframes bob{to{transform:translateY(-14px)}}
+.nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:.9rem 5vw;background:rgba(255,248,238,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--pink)}
+.logo{font-size:1.4rem;color:var(--choc)}.logo small{color:var(--rose);font-style:italic}
+nav{display:flex;gap:1.4rem;align-items:center}
+nav a:hover{color:var(--rose)}
+.cartlink{background:var(--choc);color:#fff;padding:.4rem 1rem;border-radius:99px}
+.burger{display:none;background:none;border:0;font-size:1.6rem;color:var(--choc)}
+.btn{display:inline-block;border:0;cursor:pointer;font:inherit;padding:.75rem 1.6rem;border-radius:99px;background:var(--choc);color:#fff;transition:transform .2s,background .2s}
+.btn:hover{background:var(--rose);transform:translateY(-2px)}
+.btn.alt{background:transparent;color:var(--choc);border:2px solid var(--choc)}
+.btn.alt:hover{background:var(--choc);color:#fff}
+section,.page{padding:4rem 5vw;max-width:1200px;margin:auto}
+.hero{max-width:none;min-height:80vh;display:grid;place-content:center;text-align:center;padding:4rem 8vw;background:radial-gradient(circle at 20% 20%,#fff 0,transparent 40%),linear-gradient(135deg,var(--pink),#f3c3b8 60%,var(--rose))}
+.hero h1{font-size:clamp(2.4rem,7vw,5rem);color:var(--choc);max-width:14em;margin:0 auto 1rem}
+.hero p{font-size:1.3rem;margin-bottom:2rem}
+.hero .btn{margin:.4rem}
+.deco{font-size:3rem;letter-spacing:1rem;margin-bottom:1rem}
+h2{font-size:2.2rem;color:var(--choc);margin-bottom:1.5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.5rem}
+.card{background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:0 8px 24px rgba(104,67,50,.1);transition:transform .25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px)}
+.img{height:190px;display:grid;place-content:center;font-size:5rem;background:linear-gradient(135deg,var(--pink),var(--cream));position:relative;background-size:cover;background-position:center}
+.img.big{height:380px;border-radius:var(--r);font-size:10rem}
+.tag{position:absolute;top:.8rem;left:.8rem;background:var(--choc);color:#fff;font-size:.75rem;padding:.2rem .7rem;border-radius:99px;font-family:sans-serif}
+.heart{position:absolute;top:.6rem;right:.8rem;background:#fff;border:0;border-radius:50%;width:36px;height:36px;font-size:1.1rem;cursor:pointer;color:var(--rose)}
+.body{padding:1.1rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.body p{font-size:.9rem;opacity:.85}
+.price{color:var(--rose);font-weight:700;font-size:1.15rem}
+.row{display:flex;gap:.5rem;margin-top:auto;padding-top:.6rem}.row .btn{padding:.55rem 1rem;font-size:.9rem}
+.tools{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1.5rem}
+input,select,textarea{font:inherit;padding:.7rem 1rem;border:1px solid var(--rose);border-radius:14px;background:#fff;color:var(--text);width:100%}
+.tools input{flex:2;min-width:180px}.tools select{flex:1;min-width:140px}
+.banner{max-width:none;background:var(--choc);color:var(--cream);text-align:center;padding:3rem 5vw}
+.banner h2{color:var(--pink)}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.quotes blockquote{background:var(--pink);padding:1.5rem;border-radius:var(--r)}
+.quotes cite{display:block;margin-top:.6rem;font-weight:600;color:var(--choc)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+form{display:grid;gap:.8rem}
+label{font-size:.9rem;font-weight:600}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.err{color:#b3261e;font-size:.8rem;min-height:1em}
+.qty{display:flex;align-items:center;gap:.6rem}.qty button{width:34px;height:34px;border-radius:50%;border:1px solid var(--choc);background:#fff;cursor:pointer}
+.line{display:flex;gap:1rem;align-items:center;background:#fff;padding:1rem;border-radius:var(--r);margin-bottom:.8rem}
+.line .thumb{font-size:2.5rem}.line>div:nth-child(2){flex:1}
+.total{font-size:1.4rem;text-align:right;margin:1rem 0}
+.ok{text-align:center;padding:5rem 5vw}.ok .deco{letter-spacing:0}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0}
+.chip{padding:.4rem 1rem;border:1px solid var(--choc);border-radius:99px;cursor:pointer;background:#fff}
+.chip.on{background:var(--choc);color:#fff}
+footer{background:var(--text);color:var(--cream);display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;padding:3rem 5vw}
+footer h3{color:var(--pink)}footer a:hover{color:var(--pink)}
+#toast{position:fixed;bottom:1.5rem;left:50%;transform:translate(-50%,120px);background:var(--choc);color:#fff;padding:.8rem 1.6rem;border-radius:99px;transition:transform .35s;z-index:50}
+#toast.show{transform:translate(-50%,0)}
+:focus-visible{outline:3px solid var(--rose);outline-offset:2px}
+@media(max-width:800px){
+  .burger{display:block}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--cream);padding:1.2rem;gap:1rem;border-bottom:1px solid var(--pink)}
+  body.menu nav{display:flex}
+  .split,.two{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+</style>
+</head>
+<body>
+<div id="loader"><span>🎂</span><p>Cake Corner Badulla</p></div>
+<header class="nav">
+  <a href="#home" class="logo">Cake Corner <small>Badulla</small></a>
+  <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('menu')">☰</button>
+  <nav>
+    <a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a>
+    <a href="#wishlist">♡ <b id="wcount">0</b></a><a href="#cart" class="cartlink">Cart <b id="ccount">0</b></a>
+  </nav>
+</header>
+<main id="app"></main>
+<footer>
+  <div><h3>Cake Corner Badulla</h3><p>Owner: Priyangika Weerasingha<br>Badulla, Sri Lanka</p></div>
+  <div><p>Phone: +94 XX XXX XXXX<br>Email: hello@example.com</p></div>
+  <div><a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a> · <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a> · <a id="waFoot" target="_blank" rel="noopener">WhatsApp</a></div>
+</footer>
+<div id="toast"></div>
+<script>
+/* Cake Corner Badulla – vanilla JS shop. Edit CONFIG and PRODUCTS below. */
+const CONFIG = {
+  whatsapp: '94000000000',          // OWNER: replace with business number, country code first, no + or spaces
+  deliveryNote: 'Delivery within Badulla town. Fees confirmed on WhatsApp.'
+};
+// image: put a photo in products/ and set e.g. 'products/choc.jpg'; emoji shows until then.
+const PRODUCTS = [
+ {id:1,name:'Rose Birthday Cake',cat:'Birthday Cakes',price:4500,emoji:'🎂',desc:'Vanilla sponge with rose buttercream.',new:1,best:1},
+ {id:2,name:'Royal Wedding Tier',cat:'Wedding Cakes',price:28000,emoji:'💒',desc:'Three tiers of white fondant and sugar flowers.',best:1},
+ {id:3,name:'Golden Anniversary',cat:'Anniversary Cakes',price:6500,emoji:'🥂',desc:'Layered caramel cake with gold leaf.'},
+ {id:4,name:'Chocolate Fudge Cake',cat:'Chocolate Cakes',price:4800,emoji:'🍫',desc:'Rich dark chocolate with fudge ganache.',best:1},
+ {id:5,name:'Classic Butter Cake',cat:'Butter Cakes',price:3200,emoji:'🧈',desc:'Soft, golden, the Sri Lankan tea-time favourite.'},
+ {id:6,name:'Ribbon Cake',cat:'Ribbon Cakes',price:3800,emoji:'🎀',desc:'Pink, white and chocolate ribbon layers.',best:1},
+ {id:7,name:'Cupcake Box (6)',cat:'Cupcakes',price:1800,emoji:'🧁',desc:'Six cupcakes in mixed flavours.',new:1,w:['Box of 6','Box of 12']},
+ {id:8,name:'Custom Designed Cake',cat:'Custom Designed Cakes',price:7500,emoji:'🎨',desc:'Tell us your theme and we design it for you.',new:1},
+ {id:9,name:'Festive Special',cat:'Special Occasion Cakes',price:5500,emoji:'🎉',desc:'Rich fruit cake for Avurudu, Christmas and more.'}
+];
+const SIZES={'1 lb':1,'2 lb':1.9,'3 lb':2.8,'4 lb':3.7};
+const FLAVORS=['Vanilla','Chocolate','Strawberry','Butterscotch','Coffee'];
+const $=(s,e=document)=>e.querySelector(s), app=$('#app');
+const lkr=n=>'LKR '+Math.round(n).toLocaleString('en-LK');
+const load=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}};
+let cart=load('cc_cart',[]), wish=load('cc_wish',[]);
+const save=()=>{try{localStorage.setItem('cc_cart',JSON.stringify(cart));localStorage.setItem('cc_wish',JSON.stringify(wish))}catch(e){}
+  $('#ccount').textContent=cart.reduce((a,c)=>a+c.qty,0);$('#wcount').textContent=wish.length};
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)};
+const price=(p,size)=>p.price*(p.w?(p.w.indexOf(size)+1||1):SIZES[size]||1);
+const sizesOf=p=>p.w||Object.keys(SIZES);
+const img=p=>`<div class="img">${p.emoji}${p.new?'<span class="tag">New</span>':''}<button class="heart" aria-label="Wishlist" onclick="event.stopPropagation();toggleWish(${p.id})">${wish.includes(p.id)?'♥':'♡'}</button></div>`;
+const card=p=>`<article class="card">${img(p)}<div class="body"><h3>${p.name}</h3><p>${p.desc}</p><p>Sizes: ${sizesOf(p).join(', ')}</p><span class="price">From ${lkr(p.price)}</span><div class="row"><a class="btn alt" href="#product/${p.id}">View Details</a><button class="btn" onclick="quickAdd(${p.id})">Add to Cart</button></div></div></article>`;
+function toggleWish(id){wish=wish.includes(id)?wish.filter(x=>x!=id):[...wish,id];save();route()}
+function quickAdd(id){const p=PRODUCTS.find(x=>x.id==id);addCart(p,sizesOf(p)[0],FLAVORS[0],'',1)}
+function addCart(p,size,flavor,msg,qty){const k=[p.id,size,flavor,msg].join('|');const f=cart.find(c=>c.key==k);
+  f?f.qty+=qty:cart.push({key:k,id:p.id,size,flavor,msg,qty});save();toast('Added to cart');return true}
+const total=()=>cart.reduce((a,c)=>{const p=PRODUCTS.find(x=>x.id==c.id);return a+price(p,c.size)*c.qty},0);
+
+const views={
+home(){const f=PRODUCTS.filter(p=>p.new||p.id==8).slice(0,3),b=PRODUCTS.filter(p=>p.best);
+ return `<section class="hero"><div class="deco">🎂 🧁 🍰</div><h1>Every Celebration Deserves a Special Cake!</h1><p>Freshly baked happiness, made with love.</p><div><a class="btn" href="#shop">Shop Now</a><a class="btn alt" href="#shop">Explore Our Cakes</a></div></section>
+ <section><h2>Featured collection</h2><div class="grid">${f.map(card).join('')}</div></section>
+ <section class="banner"><h2>Order 3 days ahead for wedding and custom cakes</h2><p>Share your idea on WhatsApp and we will quote it the same day.</p><br><a class="btn" href="#contact">Talk to us</a></section>
+ <section><h2>Best sellers</h2><div class="grid">${b.map(card).join('')}</div></section>
+ <section><h2>What our customers say</h2><div class="quotes"><blockquote>The birthday cake was beautiful and tasted even better. Everyone asked where we got it.<cite>Nimali, Badulla</cite></blockquote><blockquote>Our wedding tier arrived on time and perfect. Thank you, Priyangika!<cite>Kasun &amp; Dilini</cite></blockquote><blockquote>Best chocolate fudge cake in Uva. Moist, rich, not too sweet.<cite>Saman, Bandarawela</cite></blockquote></div></section>`},
+shop(){return `<div class="page"><h2>Our cakes</h2><div class="tools"><input id="q" type="search" placeholder="Search cakes" aria-label="Search"><select id="cat" aria-label="Category"><option value="">All categories</option>${[...new Set(PRODUCTS.map(p=>p.cat))].map(c=>`<option>${c}</option>`).join('')}</select><select id="sort" aria-label="Sort"><option value="">Sort by</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option><option value="new">New arrivals</option><option value="best">Best sellers</option></select></div><div class="grid" id="list"></div></div>`},
+product(id){const p=PRODUCTS.find(x=>x.id==id);if(!p)return views.shop();
+ return `<div class="page split"><div class="img big">${p.emoji}</div><div><h2>${p.name}</h2><p>${p.desc} Baked fresh to order with quality ingredients.</p><p class="price" id="pp">${lkr(p.price)}</p>
+ <label>Size</label><div class="chips" id="sizes">${sizesOf(p).map((s,i)=>`<span class="chip${i?'':' on'}" data-v="${s}">${s}</span>`).join('')}</div>
+ <label for="fl">Flavor</label><select id="fl">${FLAVORS.map(f=>`<option>${f}</option>`).join('')}</select>
+ <label for="msg">Message on cake</label><input id="msg" maxlength="40" placeholder="Happy Birthday Amma">
+ <label>Quantity</label><div class="qty"><button onclick="q(-1)">−</button><b id="qn">1</b><button onclick="q(1)">+</button></div><br>
+ <div class="row"><button class="btn alt" id="add">Add to Cart</button><button class="btn" id="now">Order Now</button></div></div></div>`},
+cart(){if(!cart.length)return `<div class="page"><h2>Your cart</h2><p>Your cart is empty.</p><br><a class="btn" href="#shop">Browse cakes</a></div>`;
+ return `<div class="page"><h2>Your cart</h2>${cart.map((c,i)=>{const p=PRODUCTS.find(x=>x.id==c.id);return `<div class="line"><div class="thumb">${p.emoji}</div><div><b>${p.name}</b><br><small>${c.size} · ${c.flavor}${c.msg?' · "'+c.msg+'"':''}</small></div><div class="qty"><button onclick="chg(${i},-1)">−</button>${c.qty}<button onclick="chg(${i},1)">+</button></div><b>${lkr(price(p,c.size)*c.qty)}</b><button class="btn alt" onclick="del(${i})">Remove</button></div>`}).join('')}<div class="total">Subtotal: ${lkr(total())}<br><b>Total: ${lkr(total())}</b></div><div style="text-align:right"><a class="btn" href="#checkout">Proceed to Checkout</a></div></div>`},
+wishlist(){const l=PRODUCTS.filter(p=>wish.includes(p.id));return `<div class="page"><h2>Your wishlist</h2>${l.length?`<div class="grid">${l.map(card).join('')}</div>`:'<p>No favourites yet. Tap ♡ on any cake.</p>'}</div>`},
+checkout(){if(!cart.length)return views.cart();
+ return `<div class="page split"><form id="co" novalidate><h2>Your details</h2>
+ <div><label for="n">Full name</label><input id="n" required><div class="err"></div></div>
+ <div class="two"><div><label for="ph">Contact number</label><input id="ph" type="tel" placeholder="07X XXX XXXX" required><div class="err"></div></div><div><label for="em">Email</label><input id="em" type="email" required><div class="err"></div></div></div>
+ <div><label for="ad">Delivery address</label><textarea id="ad" rows="2" required></textarea><div class="err"></div></div>
+ <div class="two"><div><label for="dd">Delivery date</label><input id="dd" type="date" required><div class="err"></div></div><div><label for="dt">Delivery time</label><input id="dt" type="time" required><div class="err"></div></div></div>
+ <div><label for="cm">Custom cake message</label><input id="cm"></div>
+ <div><label for="si">Special instructions</label><textarea id="si" rows="2"></textarea></div>
+ <button class="btn" type="submit">Confirm Order on WhatsApp</button></form>
+ <aside class="card"><div class="body"><h3>Order summary</h3>${cart.map(c=>{const p=PRODUCTS.find(x=>x.id==c.id);return `<p>${c.qty} × ${p.name} (${c.size}, ${c.flavor})<br><b>${lkr(price(p,c.size)*c.qty)}</b></p>`}).join('')}<p class="price">Total: ${lkr(total())}</p><p><small>${CONFIG.deliveryNote}</small></p></div></aside></div>`},
+done(){return `<div class="ok"><div class="deco">🎉</div><h2>Thank you! Your order is on its way to WhatsApp.</h2><p>Send the message there and we will confirm your order shortly.</p><br><a class="btn" href="#home">Back to home</a></div>`},
+about(){return `<div class="page split"><div class="img big">👩‍🍳</div><div><h2>About Cake Corner Badulla</h2><p>At Cake Corner Badulla, we believe every special moment deserves something sweet. We create delicious, freshly prepared cakes with love, creativity, and attention to detail. From birthdays to weddings and every celebration in between, we make your moments unforgettable.</p><br><p><b>Owner:</b> Priyangika Weerasingha</p><br><a class="btn" href="#shop">See our cakes</a></div></div>`},
+contact(){return `<div class="page split"><div><h2>Contact us</h2><p><b>Cake Corner Badulla</b><br>Owner: Priyangika Weerasingha<br>Badulla, Sri Lanka<br>Phone: +94 XX XXX XXXX<br>Email: hello@example.com</p><br><p><a class="btn" id="waBtn" target="_blank" rel="noopener">Chat on WhatsApp</a></p><br><p><a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a> · <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></p><br><div class="img" style="height:200px;font-size:1.1rem;border-radius:22px">Google Maps goes here</div></div>
+ <form id="cf" novalidate><label for="cn">Name</label><input id="cn" required><label for="ce">Email</label><input id="ce" type="email" required><label for="cmsg">Message</label><textarea id="cmsg" rows="5" required></textarea><div class="err" id="cerr"></div><button class="btn" type="submit">Send message</button></form></div>`}
+};
+const wa=t=>`https://wa.me/${CONFIG.whatsapp}${t?'?text='+encodeURIComponent(t):''}`;
+function chg(i,d){cart[i].qty=Math.max(1,cart[i].qty+d);save();route()}
+function del(i){cart.splice(i,1);save();route()}
+let qty=1;function q(d){qty=Math.max(1,qty+d);$('#qn').textContent=qty}
+
+function bind(h,arg){
+ if(h=='shop'){const r=()=>{let l=[...PRODUCTS],s=$('#q').value.toLowerCase(),c=$('#cat').value,o=$('#sort').value;
+   l=l.filter(p=>(!s||(p.name+p.desc+p.cat).toLowerCase().includes(s))&&(!c||p.cat==c));
+   if(o=='lo')l.sort((a,b)=>a.price-b.price);if(o=='hi')l.sort((a,b)=>b.price-a.price);if(o=='new')l=l.filter(p=>p.new);if(o=='best')l=l.filter(p=>p.best);
+   $('#list').innerHTML=l.length?l.map(card).join(''):'<p>No cakes match. Try another search.</p>'};
+   ['q','cat','sort'].forEach(i=>$('#'+i).addEventListener('input',r));r()}
+ if(h=='product'){const p=PRODUCTS.find(x=>x.id==arg);if(!p)return;qty=1;let size=sizesOf(p)[0];
+   $('#sizes').onclick=e=>{if(!e.target.dataset.v)return;size=e.target.dataset.v;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c==e.target));$('#pp').textContent=lkr(price(p,size))};
+   $('#add').onclick=()=>addCart(p,size,$('#fl').value,$('#msg').value.trim(),qty);
+   $('#now').onclick=()=>{addCart(p,size,$('#fl').value,$('#msg').value.trim(),qty);location.hash='#checkout'}}
+ if(h=='checkout'){const f=$('#co');$('#dd').min=new Date().toISOString().slice(0,10);
+   f.onsubmit=e=>{e.preventDefault();let ok=true;
+    f.querySelectorAll('[required]').forEach(i=>{let m='';const v=i.value.trim();
+     if(!v)m='Required.';else if(i.id=='ph'&&!/^(\+?94|0)?\d{9}$/.test(v.replace(/[\s-]/g,'')))m='Enter a valid Sri Lankan number.';
+     else if(i.id=='em'&&!/^\S+@\S+\.\S+$/.test(v))m='Enter a valid email.';
+     i.parentNode.querySelector('.err').textContent=m;if(m)ok=false});
+    if(!ok){toast('Please fix the highlighted fields');return}
+    const L=cart.map(c=>{const p=PRODUCTS.find(x=>x.id==c.id);return `• ${c.qty} × ${p.name}, ${c.size}, ${c.flavor}${c.msg?', message: "'+c.msg+'"':''} – ${lkr(price(p,c.size)*c.qty)}`});
+    const v=i=>$('#'+i).value.trim();
+    const t=`*New Order – Cake Corner Badulla*\n\n${L.join('\n')}\n\n*Total:* ${lkr(total())}\n\n*Name:* ${v('n')}\n*Phone:* ${v('ph')}\n*Email:* ${v('em')}\n*Address:* ${v('ad')}\n*Delivery:* ${v('dd')} at ${v('dt')}\n*Cake message:* ${v('cm')||'-'}\n*Notes:* ${v('si')||'-'}`;
+    window.open(wa(t),'_blank');cart=[];save();location.hash='#done'}}
+ if(h=='contact'){$('#waBtn').href=wa('Hello Cake Corner Badulla!');
+   $('#cf').onsubmit=e=>{e.preventDefault();const n=$('#cn').value.trim(),m=$('#cmsg').value.trim(),em=$('#ce').value.trim();
+    if(!n||!m||!/^\S+@\S+\.\S+$/.test(em)){$('#cerr').textContent='Enter your name, a valid email and a message.';return}
+    window.open(wa(`Message from ${n} (${em}): ${m}`),'_blank');$('#cerr').textContent='';e.target.reset();toast('Message ready to send on WhatsApp')}}
+}
+function route(){const [h,arg]=(location.hash.slice(1)||'home').split('/');const v=views[h]||views.home;
+ app.innerHTML=v(arg);bind(h,arg);document.body.classList.remove('menu');
+ if(!window.__first){window.__first=1}else scrollTo(0,0);
+ document.title=({home:'Cake Corner Badulla | Fresh Cakes Online in Sri Lanka',shop:'Shop Cakes | Cake Corner Badulla',cart:'Your Cart | Cake Corner Badulla',checkout:'Checkout | Cake Corner Badulla',about:'About Us | Cake Corner Badulla',contact:'Contact Us | Cake Corner Badulla'})[h]||'Cake Corner Badulla'}
+addEventListener('hashchange',route);
+addEventListener('load',()=>{$('#waFoot').href=wa('');save();route();setTimeout(()=>$('#loader').classList.add('done'),500)});
+
+</script>
+</body>
+</html>
